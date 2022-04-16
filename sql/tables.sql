@@ -1,23 +1,9 @@
-CREATE TABLE users (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	first_name VARCHAR(90) NOT NULL,
-	last_name VARCHAR(90) NOT NULL,
-	email VARCHAR(255) NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS game (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	gameName VARCHAR(255) NOT NULL,
-	platform TEXT,
-	developer TEXT,
-	price TEXT,
-	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	user_id INT,
-	KEY user_id_idx(user_id)
-);
-
-INSERT INTO users (first_name, last_name, email) VALUES (
-	"Pepe", "Frog", "contacto@pepeblog.com"
+	platform VARCHAR(255) NOT NULL,
+	developer VARCHAR(255) NOT NULL,
+	price VARCHAR(255) NOT NULL
 );
 
 INSERT INTO game (gameName, platform, developer, price) VALUES (

@@ -2,7 +2,7 @@
 <div class="container mt-3">
   <h1>
     {{#if id}}
-      Actualizando el artículo "{{gamesName}" ({{id}})
+      Actualizando el artículo "{{gameName}}" ({{id}})
     {{else}}
       Crear un nuevo artículo
     {{/if}}
@@ -14,13 +14,23 @@
   <form action="/game/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
     <div class="mb-3">
       <label for="title" class="form-label">Título</label>
-      <input type="text" class="form-control" name="title" aria-describedby="titleHelp" required="true" value="{{title}}">
-      <div id="titleHelp" class="form-text">Utiliza un título ingenioso</div>
+      <input type="text" class="form-control" name="title" aria-describedby="titleHelp" required="true" value="{{gameName}}">
+      <div id="titleHelp" class="form-text">Incresa titulo del videojuego</div>
     </div>
     <div class="mb-3">
-      <label for="content" class="form-label">Contenido</label>
-      <textarea class="form-control" name="content" rows="3" aria-describedby="contentHelp">{{content}}</textarea>
-      <div id="contentHelp" class="form-text">¿Que quieres contar al mundo?</div>
+      <label for="title" class="form-label">Plataforma</label>
+      <input type="text" class="form-control" name="title" aria-describedby="titleHelp" required="true" value="{{platform}}">
+      <div id="titleHelp" class="form-text">Plataforma disponible</div>
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label">Desarrollador</label>
+      <input type="text" class="form-control" name="title" aria-describedby="titleHelp" required="true" value="{{developer}}">
+      <div id="titleHelp" class="form-text">desarrollador</div>
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Precio</label>
+      <textarea class="form-control" name="content" rows="3" aria-describedby="contentHelp">{{price}}</textarea>
+      <div id="contentHelp" class="form-text">precio</div>
     </div>
     <div class="mb-3">
       <button type="submit" class="btn btn-primary">Enviar</button>

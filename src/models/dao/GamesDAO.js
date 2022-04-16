@@ -9,7 +9,7 @@ class GamesDAO {
   }
 
   async getAll () {
-    const response = await this.db.query('SELECT id, gameName, platform, developer, price FROM games')
+    const response = await this.db.query('SELECT id, gameName, platform, developer, price FROM game')
     const rows = response[0]
     return rows
   }
@@ -21,7 +21,7 @@ class GamesDAO {
   }
 
   async create (games) {
-    const response = await this.db.query('INSERT INTO games (gameName, platform, developer, price) VALUES (?, ?)', [games.gameName, games.platform, games.developer, games.price])
+    const response = await this.db.query('INSERT INTO games (gameName, platform, developer, price) VALUES (?, ?, ?, ?)', [games.gameName, games.platform, games.developer, games.price])
     const result = response[0]
     return result.insertId
   }
