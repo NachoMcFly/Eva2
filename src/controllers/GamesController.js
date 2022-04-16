@@ -23,7 +23,7 @@ class GamesController {
     const id = req.params.id
 
     try {
-      const games = await this.GamesDao.getById(id)
+      const games = await this.gamesDao.getById(id)
 
       if (!games) {
         res.status(404).render('404')
@@ -82,7 +82,7 @@ class GamesController {
     try {
       const id = await this.gamesDao.create(games)
 
-      res.redirect(`/articles/${id}`)
+      res.redirect(`/game/${id}`)
     } catch (error) {
       console.log(error)
       res.status(500).render('500')
@@ -132,4 +132,4 @@ class GamesController {
   }
 }
 
-module.exports = GamesDAO
+module.exports = GamesController

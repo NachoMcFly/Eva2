@@ -13,18 +13,18 @@ const pageController = new PageController()
 const gamesController = new GamesController(sqlClient)
 
 // Routes
-router.get('/', gamesController.renderHomeWithArticles)
+router.get('/', gamesController.renderHomeWithGames)
 router.get('/about', pageController.renderAbout)
 
-router.get('/articles/create', gamesController.renderGamesCreationForm)
-router.post('/articles/create', gamesController.insertAndRenderGames)
+router.get('/game/create', gamesController.renderGamesCreationForm)
+router.post('/game/create', gamesController.insertAndRenderGames)
 
-router.get('/articles/:id', gamesController.renderSingleGames)
+router.get('/game/:id', gamesController.renderSingleGames)
 
-router.get('/articles/:id/update', gamesController.renderGamesUpdateForm)
-router.post('/articles/:id/update', gamesController.updateAndRenderGames)
+router.get('/game/:id/update', gamesController.renderGamesUpdateForm)
+router.post('/game/:id/update', gamesController.updateAndRenderGames)
 
-router.post('/articles/:id/delete', gamesController.deleteGamesAndRenderResponse)
+router.post('/game/:id/delete', gamesController.deleteGamesAndRenderResponse)
 
 router.get('*', pageController.renderNotFound)
 

@@ -5,10 +5,12 @@ CREATE TABLE users (
 	email VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE articles (
+CREATE TABLE IF NOT EXISTS game (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(255) NOT NULL,
-	content TEXT,
+	gameName VARCHAR(255) NOT NULL,
+	platform TEXT,
+	developer TEXT,
+	price TEXT,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	user_id INT,
 	KEY user_id_idx(user_id)
@@ -16,4 +18,8 @@ CREATE TABLE articles (
 
 INSERT INTO users (first_name, last_name, email) VALUES (
 	"Pepe", "Frog", "contacto@pepeblog.com"
+);
+
+INSERT INTO game (gameName, platform, developer, price) VALUES (
+	"seis", "dos", "tres", "cuadro"
 );

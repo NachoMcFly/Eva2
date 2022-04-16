@@ -9,14 +9,14 @@
   </header>
   <hr>
   <h3 class="mt-5 mb-3">Últimos artículos</h3>
-  {{#each articles}}
+  {{#each games}}
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title">{{this.gamesName}</h5>
         <p class="card-text">{{this.platform}}</p>
         <p class="card-text">{{this.developer}}</p>
         <p class="card-text">{{this.price}}</p>
-        <a href="/articles/{{this.id}}" class="btn btn-primary btn-sm">Leer más</a>
+        <a href="/game/{{this.id}}" class="btn btn-primary btn-sm">Leer más</a>
       </div>
     </div>
   {{/each}}
