@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS game (
+CREATE TABLE games (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	gameName VARCHAR(255) NOT NULL,
 	platform VARCHAR(255) NOT NULL,
@@ -6,6 +6,6 @@ CREATE TABLE IF NOT EXISTS game (
 	price VARCHAR(255) NOT NULL
 );
 
-INSERT INTO game (gameName, platform, developer, price) VALUES (
+INSERT INTO games (gameName, platform, developer, price) VALUES (
 	"seis", "dos", "tres", "cuadro"
 );
