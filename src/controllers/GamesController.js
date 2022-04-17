@@ -44,7 +44,7 @@ class GamesController {
   }
 
   renderGamesCreationForm (req, res) {
-    res.render('game-form')
+    res.render('games-form')
   }
 
   async renderGamesUpdateForm (req, res) {
@@ -58,7 +58,7 @@ class GamesController {
         return
       }
 
-      res.render('game-form', {
+      res.render('games-form', {
         id,
         gameName: games.gameName,
         platform: games.platform,
@@ -121,7 +121,7 @@ class GamesController {
 
       await this.gamesDao.delete(id)
 
-      res.render('game-deleted', {
+      res.render('games-deleted', {
         id,
         gameName: games.gameName
       })
