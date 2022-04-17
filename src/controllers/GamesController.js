@@ -30,7 +30,7 @@ class GamesController {
         return
       }
 
-      res.render('game', {
+      res.render('games', {
         id,
         gameName: games.gameName,
         platform: games.platform,
@@ -82,7 +82,7 @@ class GamesController {
     try {
       const id = await this.gamesDao.create(games)
 
-      res.redirect(`/game/${id}`)
+      res.redirect(`/games/${id}`)
     } catch (error) {
       console.log(error)
       res.status(500).render('500')
@@ -101,7 +101,7 @@ class GamesController {
 
       await this.gamesDao.update(games)
 
-      res.redirect(`/game/${id}`)
+      res.redirect(`/games/${id}`)
     } catch (error) {
       console.log(error)
       res.status(500).render('500')
