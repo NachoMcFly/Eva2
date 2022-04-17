@@ -9,7 +9,7 @@ class GamesDAO {
   }
 
   async getAll () {
-    const response = await this.db.query('SELECT id, gameName, platform, developer, price FROM game')
+    const response = await this.db.query('SELECT id, gameName, platform, developer, price FROM games')
     const rows = response[0]
     return rows
   }
