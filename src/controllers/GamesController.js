@@ -5,7 +5,7 @@ class GamesController {
     this.gamesDao = new GamesDAO(db)
     this.renderHomeWithGames = this.renderHomeWithGames.bind(this)
     this.renderSingleGames = this.renderSingleGames.bind(this)
-    this.renderAGamesCreationForm = this.renderGamesCreationForm.bind(this)
+    this.renderGamesCreationForm = this.renderGamesCreationForm.bind(this)
     this.renderGamesUpdateForm = this.renderGamesUpdateForm.bind(this)
     this.insertAndRenderGames = this.insertAndRenderGames.bind(this)
     this.updateAndRenderGames = this.updateAndRenderGames.bind(this)
