@@ -1,7 +1,12 @@
 {{> navbar}}
 <div class="container mt-3">
   <header class="my-5">
-    <h1>AtalayaGamers</h1>
+    <img
+      class="img-thumbnail"
+      src="/img/atalaya-logo.png"
+      alt="logo"
+      width="750"
+    >
     <p>
       ¿Se puede vivir sin videojuegos?
     </p>
@@ -13,7 +18,7 @@
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title">{{this.gameName}}</h5>
-        <p class="card-text">Plataforma Disponible : {{this.platform}}</p>
+        <p class="card-text">Plataforma Disponible: {{this.platform}}</p>
         <p class="card-text">Desarrolladora: {{this.developer}}</p>
         <p class="card-text">Valor $ {{this.price}}</p>
         <a href="/game/{{this.id}}" class="btn btn-primary btn-sm">Leer más</a>
