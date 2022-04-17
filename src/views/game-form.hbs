@@ -11,7 +11,7 @@
     Este formulario se usará tanto para edición como creación, este if nos dice que si viene un id, entonces será un update, si no, será un create.
     Para el action, si viene un id será un post a /articles/:id/update, si no, será un post a /articles/create.
   -->
-  <form action="/games/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+  <form action="/game/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
     <div class="mb-3">
       <label for="gameName" class="form-label">Nombre del Juego</label>
       <input type="text" class="form-control" name="gameName" aria-describedby="gameNameHelp" required="true" value="{{gameName}}">

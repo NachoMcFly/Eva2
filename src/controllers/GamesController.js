@@ -13,9 +13,9 @@ class GamesController {
   }
 
   async renderHomeWithGames (req, res) {
-    const gameName = await this.gamesDao.getAll()
+    const games = await this.gamesDao.getAll()
     res.render('home', {
-      gameName
+      games
     })
   }
 
@@ -30,7 +30,7 @@ class GamesController {
         return
       }
 
-      res.render('games', {
+      res.render('game', {
         id,
         gameName: games.gameName,
         platform: games.platform,
@@ -44,7 +44,7 @@ class GamesController {
   }
 
   renderGamesCreationForm (req, res) {
-    res.render('games-form')
+    res.render('game-form')
   }
 
   async renderGamesUpdateForm (req, res) {
@@ -58,7 +58,7 @@ class GamesController {
         return
       }
 
-      res.render('games-form', {
+      res.render('game-form', {
         id,
         gameName: games.gameName,
         platform: games.platform,
@@ -82,7 +82,7 @@ class GamesController {
     try {
       const id = await this.gamesDao.create(games)
 
-      res.redirect(`/games/${id}`)
+      res.redirect(`/game/${id}`)
     } catch (error) {
       console.log(error)
       res.status(500).render('500')
@@ -101,7 +101,7 @@ class GamesController {
 
       await this.gamesDao.update(games)
 
-      res.redirect(`/games/${id}`)
+      res.redirect(`/game/${id}`)
     } catch (error) {
       console.log(error)
       res.status(500).render('500')
@@ -121,7 +121,7 @@ class GamesController {
 
       await this.gamesDao.delete(id)
 
-      res.render('games-deleted', {
+      res.render('game-deleted', {
         id,
         gameName: games.gameName
       })
